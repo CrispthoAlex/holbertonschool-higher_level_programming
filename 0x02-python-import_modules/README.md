@@ -1,7 +1,5 @@
 # 0x02. Python - import & modules
 
-Foobar is a Python library for dealing with word pluralization.
-
 ## Resources
 
 #### Read or watch:
