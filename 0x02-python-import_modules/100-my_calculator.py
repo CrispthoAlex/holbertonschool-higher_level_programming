@@ -16,7 +16,7 @@ if __name__ == "__main__":
                 print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
             if sys.argv[2] == operator[2]:  # * mul
                 print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
-            if sys.argv[2] == operator[0]:  # / div
+            if sys.argv[2] == operator[3]:  # / div
                 print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
         else:
             print("{}".format(errormsg[1]))
