@@ -4,8 +4,8 @@ if __name__ == "__main__":
     import sys  # to use argv
     operator = '+-*/'
     nuargv = len(sys.argv) - 1
-    errormsg = ['Usage: ./100-my_calculator.py <a> <operator> <b>',
-                'Unknown operator. Available operators: +, -, * and /']
+    errormsg = ["Usage: ./100-my_calculator.py <a> <operator> <b>",
+                "Unknown operator. Available operators: +, -, * and /"]
     if nuargv == 3:
         if sys.argv[2] in operator:
             a = int(sys.argv[1])
@@ -19,8 +19,8 @@ if __name__ == "__main__":
             if sys.argv[2] == operator[0]:  # / div
                 print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
         else:
-            print(errormsg[1])
+            print("{}".format(errormsg[1]))
             exit(1)
     else:
-        print(errormsg[0])
+        print("{}".format(errormsg[0]))
         exit(1)
