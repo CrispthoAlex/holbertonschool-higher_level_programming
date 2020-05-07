@@ -14,7 +14,7 @@ int is_palindrome(listint_t **head)
 	int listpalin[1024]; /*collecting data of nodes*/
 	int i = 0, j = 0;
 
-	if (head && (*head))
+	if (head || (*head))
 	{
 		while (tmp)
 		{	/* collecting node by node*/
