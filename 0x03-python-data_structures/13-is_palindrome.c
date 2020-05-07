@@ -11,19 +11,20 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *tmp = *head;
-	int listpalin[1024]; /*collecting data of nodes*/
+	int listpalin[2048]; /*collecting data of nodes*/
 	int i = 0, j = 0;
 
 	if (head || (*head))
 	{
 		while (tmp)
 		{	/* collecting node by node*/
-			listpalin[i] = tmp->n, tmp = tmp->next, i++;
+			listpalin[i] = tmp->n;
+			tmp = tmp->next;
+			i++;
 		}
 		i--;
 		for (; j <= i; i--, j++)
-		{
-			/* eval if equal or not on each posix*/
+		{	/* eval if equal or not on each posix*/
 			if (listpalin[i] != listpalin[j])
 				return (0);
 		}
