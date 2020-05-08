@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/python3
 def roman_to_int(roman_string):
     summ = 0
     if roman and type(roman) is str:
