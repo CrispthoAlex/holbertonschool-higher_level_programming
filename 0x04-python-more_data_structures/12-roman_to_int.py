@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def roman_to_int(roman_string):
+def roman_to_int(roman):
     summ = 0
     if roman and type(roman) is str:
         rom = {'I': 1, 'V': 5, 'X': 10,
