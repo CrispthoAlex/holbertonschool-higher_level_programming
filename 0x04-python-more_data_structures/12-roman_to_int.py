@@ -8,5 +8,5 @@ def roman_to_int(roman):
             if idx < len(roman) - 1 and dic[roman[idx]] < dic[roman[idx+1]]:
                 summ -= dic[roman[idx]]
             else:
-                summ = summ + dic[roman[idx]]
+                summ += dic[roman[idx]]
     return summ
