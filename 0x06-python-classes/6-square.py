@@ -32,20 +32,18 @@ Size validation mandatory: Write a class Square that defines a square by:
 
 class Square:
     """ init __size constructor and area() method """
-    __size = 0
-    __position = (0, 0)
-
     def __init__(self, size=0, position=(0, 0)):
         if type(size) is not int:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-        if type(position) is not tuple and len(position) != 2\
-           and type(position[0]) is not int or type(position[1]) is not int\
-           and position[0] < 0 or position[1] < 0:
+        if type(position) is tuple and len(position) == 2\
+            and type(position[0]) is int and type(position[1]) is int\
+                and position[0] >= 0 and position[1] >= 0:
+                    self.__position = position
+        else:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = position
 
     def area(self):
         """ area method """
@@ -74,11 +72,12 @@ class Square:
     @position.setter
     def position(self, value):
         """setter position"""
-        if type(value) is not tuple and len(value) != 2\
-           and type(value[0]) is not int or type(value[1]) is not int\
-           and value[0] < 0 or value[1] < 0:
+        if type(value) is tuple and len(value) == 2\
+            and type(value[0]) is int and type(value[1]) is int\
+                and value[0] >= 0 and value[1] >= 0:
+                    self.__position = value
+        else:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
 
     def my_print(self):
         """ prints square with character # """
