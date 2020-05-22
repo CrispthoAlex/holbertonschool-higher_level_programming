@@ -18,11 +18,11 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    if isinstance(matrix, list):
+    if isinstance(matrix, list) and matrix:
         new_matrix = matrix.copy()
         first_el = len(new_matrix[0])
         for row in new_matrix:
-            if isinstance(row, list):
+            if isinstance(row, list) and row:
                 if first_el == len(row):
                     for col in row:
                         if type(col) in [int, float]:
