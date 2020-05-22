@@ -25,7 +25,7 @@ def matrix_divided(matrix, div):
             if isinstance(row, list) and row:
                 if first_el == len(row):
                     for col in row:
-                        if type(col) in [int, float]:
+                        if type(col) in [int, float] and col:
                             pass
                         else:
                             raise TypeError(tyerror)
