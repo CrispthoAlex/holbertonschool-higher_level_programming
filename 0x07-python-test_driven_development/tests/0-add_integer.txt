@@ -22,6 +22,8 @@ Normal cases:
     >>> a = 8
     >>> add_integer(a, 2)
     10
+    >>> add_integer(0)
+    98
 
 Float Cases:
 
