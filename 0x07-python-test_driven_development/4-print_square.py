@@ -2,12 +2,13 @@
 """
 Prints  a square with the character #
 >>> print_square()
-My name is Crispthofer Rincon
+##
+##
 """
 
 
 def print_square(size):
-    """Prints My name is <first name> <last name>
+    """Prints a square with character # using size argument
 
     """
     if type(size) is not int or (type(size) is float and size < 0):
