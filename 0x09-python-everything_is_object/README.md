@@ -5,7 +5,7 @@ Now that we understand that everything is an object and have a little bit of kno
 
 BTW, have you ever modified a variable without knowing it or wanting to? I mean:
 
-````
+````python
 >>> a = 1
 >>> b = a
 >>> a = 2
