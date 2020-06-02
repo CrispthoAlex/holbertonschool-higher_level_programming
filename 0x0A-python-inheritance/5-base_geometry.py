@@ -6,4 +6,7 @@ Empty class BaseGeometry
 
 
 class BaseGeometry():
+    """
+    Class: Basegometry
+    """
     pass
