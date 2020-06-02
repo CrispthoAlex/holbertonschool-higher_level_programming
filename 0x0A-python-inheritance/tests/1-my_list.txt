@@ -1,0 +1,57 @@
+The ``1-my_list`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+First import
+``MyList`` from the ``1-my_list`` module:
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+
+char cases:
+
+>>> my_list.append("c")
+>>> my_list.append("j")
+>>> my_list.append("w")
+>>> my_list.append("f")
+>>> my_list.print_sorted()
+['c', 'f', 'j', 'w']
+>>> print(my_list)
+['c', 'j', 'w', 'f']
+
+int Cases:
+
+>>> my_list = MyList()
+>>> my_list.append(2)
+>>> my_list.append(10)
+>>> my_list.append(23)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[2, 5, 10, 23]
+
+Float cases:
+
+>>> my_list = MyList()
+>>> my_list.append(2.5)
+>>> my_list.append(10.1)
+>>> my_list.append(10.15)
+>>> my_list.append(10.25)
+>>> my_list.append(1.25)
+>>> my_list.print_sorted()
+[1.25, 2.5, 10.1, 10.15, 10.25]
+
+Error Cases:
+
+>>> my_list = MyList()
+>>> my_list.append(5j)
+>>> my_list.append(4)
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+TypeError: unorderable types: int() < complex()
+
+>>> my_list = MyList()
+>>> my_list.append(A)
+Traceback (most recent call last):
+NameError: name 'A' is not defined
