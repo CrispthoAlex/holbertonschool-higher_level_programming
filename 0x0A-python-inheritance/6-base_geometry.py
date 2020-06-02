@@ -10,6 +10,7 @@ class BaseGeometry:
     Class BaseGeometry
     """
 
+
     def area(self):
         """
         raises an Exception
