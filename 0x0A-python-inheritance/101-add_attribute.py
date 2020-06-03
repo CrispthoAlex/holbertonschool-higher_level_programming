@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-"""
-adds a new attribute to an object if its possible
-"""
+""" adds a new attribute to an object if its possible """
 
 
-def add_attribute(obje, uname, value):
+def add_attribute(obje, key, value):
     """set attrib
     Args:
-    @obje: Object
-    @uname: name
-    @value: instance
+        @obje: Object
+        @key: key
+        @value: valuee
     """
-    if obje.__class__.__module__ == 'builtins':
+    if hasattr(obje, "__dict__"):
+        setattr(obje, key, value)
+    else:
         raise TypeError("can't add new attribute")
-    setattr(obje, uname, value)
