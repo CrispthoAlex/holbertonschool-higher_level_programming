@@ -32,6 +32,15 @@ char cases:
 >>> print(my_list)
 ['c', 'j', 'w', 'f']
 
+>>> my_list = MyList()
+>>> my_list.append("holberton")
+>>> print(my_list)
+['holberton']
+>>> my_list.print_sorted()
+['holberton']
+>>> print(my_list)
+['holberton']
+
 int Cases:
 
 >>> my_list = MyList()
@@ -62,7 +71,7 @@ Error Cases:
 >>> my_list = MyList()
 >>> my_list.append(5j)
 >>> my_list.append(4)
->>>print(my_list)
+>>> print(my_list)
 [5j, 4]
 >>> my_list.print_sorted()
 Traceback (most recent call last):
