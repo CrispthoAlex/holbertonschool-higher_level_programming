@@ -39,6 +39,8 @@ int Cases:
 >>> my_list.append(10)
 >>> my_list.append(23)
 >>> my_list.append(5)
+>>> print(my_list)
+[2, 10, 23, 5]
 >>> my_list.print_sorted()
 [2, 5, 10, 23]
 
@@ -50,6 +52,8 @@ Float cases:
 >>> my_list.append(10.15)
 >>> my_list.append(10.25)
 >>> my_list.append(1.25)
+>>> print(my_list)
+[2.5, 10.1, 10.15, 10.25, 1.25]
 >>> my_list.print_sorted()
 [1.25, 2.5, 10.1, 10.15, 10.25]
 
@@ -58,6 +62,8 @@ Error Cases:
 >>> my_list = MyList()
 >>> my_list.append(5j)
 >>> my_list.append(4)
+>>>print(my_list)
+[5j, 4]
 >>> my_list.print_sorted()
 Traceback (most recent call last):
 TypeError: unorderable types: int() < complex()
