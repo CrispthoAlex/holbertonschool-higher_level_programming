@@ -11,6 +11,12 @@ First import
 >>> my_list = MyList()
 >>> print(my_list)
 []
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList()
+>>> print(my_list)
+[]
 >>> my_list.append(9)
 >>> my_list.append(4)
 >>> print(my_list)
@@ -20,7 +26,22 @@ First import
 >>> print(my_list)
 [9, 4]
 
+>>> my_list = MyList()
+>>> my_list.append(9)
+>>> my_list.append(6)
+>>> print(my_list)
+[9, 6]
+>>> my_list.print_sorted() == my_list
+[6, 9]
+False
+
 char cases:
+
+>>> my_list = MyList("laura")
+>>> print(my_list)
+['l', 'a', 'u', 'r', 'a']
+>>> my_list.print_sorted()
+['a', 'a', 'l', 'r', 'u']
 
 >>> my_list = MyList()
 >>> print(my_list)
@@ -33,6 +54,8 @@ char cases:
 ['c', 'j', 'w', 'f']
 >>> my_list.print_sorted()
 ['c', 'f', 'j', 'w']
+>>> print(my_list)
+['c', 'j', 'w', 'f']
 
 >>> my_list = MyList()
 >>> print(my_list)
@@ -41,6 +64,8 @@ char cases:
 >>> print(my_list)
 ['holberton']
 >>> my_list.print_sorted()
+['holberton']
+>>> print(my_list)
 ['holberton']
 
 int Cases:
@@ -56,6 +81,8 @@ int Cases:
 [2, 10, 23, 5]
 >>> my_list.print_sorted()
 [2, 5, 10, 23]
+>>> print(my_list)
+[2, 10, 23, 5]
 
 Float cases:
 
@@ -71,6 +98,8 @@ Float cases:
 [2.5, 10.1, 10.15, 10.25, 1.25]
 >>> my_list.print_sorted()
 [1.25, 2.5, 10.1, 10.15, 10.25]
+>>> print(my_list)
+[2.5, 10.1, 10.15, 10.25, 1.25]
 
 Error Cases:
 
