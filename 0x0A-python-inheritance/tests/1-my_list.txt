@@ -17,8 +17,6 @@ First import
 [9, 4]
 >>> my_list.print_sorted()
 [4, 9]
->>> print(my_list)
-[9, 4]
 
 char cases:
 
@@ -27,18 +25,16 @@ char cases:
 >>> my_list.append("j")
 >>> my_list.append("w")
 >>> my_list.append("f")
->>> my_list.print_sorted()
-['c', 'f', 'j', 'w']
 >>> print(my_list)
 ['c', 'j', 'w', 'f']
+>>> my_list.print_sorted()
+['c', 'f', 'j', 'w']
 
 >>> my_list = MyList()
 >>> my_list.append("holberton")
 >>> print(my_list)
 ['holberton']
 >>> my_list.print_sorted()
-['holberton']
->>> print(my_list)
 ['holberton']
 
 int Cases:
