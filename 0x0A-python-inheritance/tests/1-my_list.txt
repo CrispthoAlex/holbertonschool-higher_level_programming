@@ -17,6 +17,8 @@ First import
 [9, 4]
 >>> my_list.print_sorted()
 [4, 9]
+>>> print(my_list)
+[9, 4]
 
 char cases:
 
