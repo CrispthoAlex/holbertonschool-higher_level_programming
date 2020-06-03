@@ -22,6 +22,7 @@ First import
 
 char cases:
 
+>>> my_list = MyList()
 >>> my_list.append("c")
 >>> my_list.append("j")
 >>> my_list.append("w")
