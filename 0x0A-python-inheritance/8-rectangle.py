@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-import Class BaseGeometry
-
-"""
+""" Class BaseGeometry """
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
@@ -15,6 +12,8 @@ class Rectangle(BaseGeometry):
         """
         * Instantiation with width and height:
             Validated by integer_validator
+        Args: @width: width
+              @height: height
         """
         self.integer_validator("width", width)
         self.integer_validator("height", height)
