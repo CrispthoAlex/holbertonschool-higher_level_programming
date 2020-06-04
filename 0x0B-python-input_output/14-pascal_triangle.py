@@ -22,8 +22,8 @@ def pascal_triangle(n):
         for fila in range(2, n):
             i_list = [1]
             for i in range(1, fila):
-                i_list.append(tri_pascal[fila - 1][i - 1]\
-                              + tri_pascal[fila - 1][i])
+                i_list.append(tri_pascal[fila - 1][i - 1] +
+                              tri_pascal[fila - 1][i])
             i_list.append(1)
             tri_pascal.append(i_list)
 
