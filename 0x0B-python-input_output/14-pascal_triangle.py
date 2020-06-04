@@ -11,21 +11,20 @@ def pascal_triangle(n):
     the Pascals triangle
     Args: @n:
     """
+    tri_pascal = []
     if n <= 0:
-        return []
+        return tri_pascal
+    elif n == 1:
+        tri_pascal.append([1])
+        return tri_pascal
+    else:
+        tri_pascal = [[1], [1, 1]]
+        for fila in range(2, n):
+            i_list = [1]
+            for i in range(1, fila):
+                i_list.append(tri_pascal[fila - 1][i - 1]\
+                              + tri_pascal[fila - 1][i])
+            i_list.append(1)
+            tri_pascal.append(i_list)
 
-    if n == 1:
-        return [[1]]
-
-    pascal = [[1], [1, 1]]
-    n_list = []
-
-    for row in range(2, n):
-        n_list = [1]
-        for line in range(1, row):
-            element = pascal[row - 1][line - 1] + pascal[row - 1][line]
-            n_list.append(element)
-        n_list.append(1)
-        pascal.append(n_list)
-
-    return pascal
+    return tri_pascal
