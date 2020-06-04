@@ -17,7 +17,7 @@ def append_after(filename="", search_string="", new_string=""):
         string_line = ""  # string to generate full file
         for fline in file:  # fline is my line in my file
             string_line += fline
-            if search_string  in fline:
+            if search_string in fline:
                 string_line += new_string
         file.seek(0)  # position 0 of my file
         file.write(string_line)  # overwrite all my file
