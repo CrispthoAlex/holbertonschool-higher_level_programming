@@ -30,5 +30,11 @@ class BaseclassTests(unittest.TestCase):
         base_0 = Base("holbie")
         self.assertEqual(base_0.id, "holbie")
 
+    def test_to_json(self):
+        """ to json string """
+        a = Base.to_json_string(None)
+        self.assertEqual(a, "[]")
+
+
 if __name__ == '__main__':
     unittest.main()
