@@ -103,10 +103,8 @@ class Base:
                 elif cls.__name__ == "Square":
                     attri_list = ["id", "size", "x", "y"]
                 writer = csv.DictWriter(newfile, fieldnames=attri_list)
-                writer.writeheader()
-                writer.writerows(dict_list)
-                # for item_dict in list_objs:
-                # writer.writerow(item_dict.to_dictionary())
+                for item_dict in list_objs:
+                    writer.writerow(item_dict.to_dictionary())
             else:
                 newfile.write('[]')
 
@@ -116,7 +114,7 @@ class Base:
         insta_list = []  # init empty list
         finame = cls.__name__ + ".json"
 
-        if not path.exists(finame):
+        if not path.isfile(finame):
             return insta_list
 
         with open(finame) as myfile:  # open in mode "r" default
@@ -126,5 +124,3 @@ class Base:
                 row = {key: int(row[key]) for key in row.key()}
                 insta_list.append(cls.create(**row))  # add to list
         return insta_list
-
-# End base file
