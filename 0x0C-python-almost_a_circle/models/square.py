@@ -39,7 +39,7 @@ class Square(Rectangle):
         1st argument - id attribute, 2nd argument - size attribute
         3rd argument - x attribute, 4th argument - y attribute
         """
-        if args and len(args) > 0:
+        if args:
             attri_list = ["id", "size", "x", "y"]
             for item, value in enumerate(args):
                 if item < 4:

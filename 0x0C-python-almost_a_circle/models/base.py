@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ class Base """
-from os import path
+import os
 import json
 import csv
 
@@ -62,9 +62,9 @@ class Base:
             @dictionary
         """
         if cls.__name__ == "Rectangle":
-            dummy = cls(5, 5)
+            dummy = cls(4, 5)
         elif cls.__name__ == "Square":
-            dummy = cls(5)
+            dummy = cls(6)
         dummy.update(**dictionary)
 
         return dummy
@@ -75,10 +75,10 @@ class Base:
         insta_list = []  # init empty list
         finame = cls.__name__ + ".json"
 
-        if not path.exists(finame):
+        if not os.path.exists(finame):
             return insta_list
 
-        with open(finame) as myfile:  # open in mode "r" default
+        with open(finame, mode="r") as myfile:  # open in mode "r" default
             data_file = cls.from_json_string(myfile.read())
             for items in data_file:
                 insta_list.append(cls.create(**items))
@@ -114,10 +114,10 @@ class Base:
         insta_list = []  # init empty list
         finame = cls.__name__ + ".csv"
 
-        if not path.isfile(finame):
+        if not os.path.isfile(finame):
             return insta_list
 
-        with open(finame) as myfile:  # open in mode "r" default
+        with open(finame, mode="r", newline='') as myfile:
             reader = csv.DictReader(myfile)
 
             for row in reader:  # catch row {key:value}

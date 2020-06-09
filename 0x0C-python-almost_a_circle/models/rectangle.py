@@ -102,7 +102,7 @@ class Rectangle(Base):
         3rd argument - height attribute, 4th argument - x attribute
         5th argument - y attribute
         """
-        if args and len(args) > 0:
+        if args:
             attri_list = ["id", "width", "height", "x", "y"]
             for item, value in enumerate(args):
                 if item < 5:
