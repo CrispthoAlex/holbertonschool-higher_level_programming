@@ -94,9 +94,9 @@ class Base:
         * writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         """
         filecsv = cls.__name__ + ".csv"  # create name
-        with open(filecsv, "w") as newfile:
+        with open(filecsv, "w", newline='') as newfile:
 
-            if list_objs:
+            if list_objs is not None or not list_objs == []:
                 dict_list = [x.to_dictionary() for x in list_objs]
                 if cls.__name__ == "Rectangle":
                     attri_list = ["id", "width", "height", "x", "y"]
