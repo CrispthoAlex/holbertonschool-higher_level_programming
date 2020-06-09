@@ -112,7 +112,7 @@ class Base:
     def load_from_file_csv(cls):
         """ deserializes in CSV """
         insta_list = []  # init empty list
-        finame = cls.__name__ + ".json"
+        finame = cls.__name__ + ".csv"
 
         if not path.isfile(finame):
             return insta_list
@@ -121,6 +121,6 @@ class Base:
             reader = csv.DictReader(myfile)
 
             for row in reader:  # catch row {key:value}
-                row = {key: int(row[key]) for key in row.key()}
+                row = {key: int(row[key]) for key in row.keys()}
                 insta_list.append(cls.create(**row))  # add to list
         return insta_list
