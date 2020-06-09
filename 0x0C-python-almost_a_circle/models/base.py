@@ -106,7 +106,7 @@ class Base:
             writer.writeheader()
             writer.writerows(dict_list)
         else:
-            csvf.write('[]')
+            newfile.write('[]')
 
     @classmethod
     def load_from_file_csv(cls):
