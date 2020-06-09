@@ -66,8 +66,11 @@ class SquareClassTests(unittest.TestCase):
         self.assertEqual(self.squa2.area(), 4)
         self.assertEqual(self.squa3.area(), 25)
 
-    def test_display_square(self):  # Square(4, 6, 2)
-        """ test stdout the Square instance  """
+    def test_display_square(self):
+        """
+        test stdout the Square instance
+        Square(4, 6, 2)
+        """
 
         squa_disp = "\n"\
                     "\n"\

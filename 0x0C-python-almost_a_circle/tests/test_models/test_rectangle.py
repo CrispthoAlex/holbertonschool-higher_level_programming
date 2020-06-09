@@ -39,24 +39,28 @@ class RectangleClassTests(unittest.TestCase):
         self.assertEqual(rec_2.y, 2)
 
     def test_r1(self):
+        """ TypeError case  """
         self.assertRaises(TypeError, Rectangle, "a", 2, 7, 8)
         self.assertRaises(TypeError, Rectangle, 2, 3, "3", 9)
         self.assertRaises(TypeError, Rectangle, 2, "3", 5, 9)
         self.assertRaises(TypeError, Rectangle, 8, 6, 3, "9")
 
     def test_r2(self):
+        """ TypeError case  """
         self.assertRaises(TypeError, Rectangle, [1, 2], 2, 7, 8)
         self.assertRaises(TypeError, Rectangle, 2, 3, 3.5, 9)
         self.assertRaises(TypeError, Rectangle, 2, {1, 2}, 5, 9)
         self.assertRaises(TypeError, Rectangle, 8, 6, 3, (1, 2))
 
     def test_r3(self):
+        """ TypeError case  """
         self.assertRaises(ValueError, Rectangle, -8, 2, 7, 8)
         self.assertRaises(ValueError, Rectangle, 2, 3, -5, 9)
         self.assertRaises(ValueError, Rectangle, 2, -8, 5, 9)
         self.assertRaises(ValueError, Rectangle, 8, 6, 3, -5)
 
     def test_r4(self):
+        """ TypeError case  """
         self.assertRaises(TypeError, Rectangle, None, 3, 6, 8, 9)
         self.assertRaises(TypeError, Rectangle, 222, 197, 5j, 19)
         self.assertRaises(TypeError, Rectangle, 2, float("inf"), 8, 1)
@@ -64,6 +68,7 @@ class RectangleClassTests(unittest.TestCase):
         self.assertRaises(TypeError, Rectangle)
 
     def test_area(self):
+        """ TypeError case  """
         self.assertEqual(self.rec0.area(), 24)
         self.assertEqual(self.rectangle_1.area(), 7)
         self.assertEqual(self.rectangle_2.area(), 8)
@@ -84,6 +89,7 @@ class RectangleClassTests(unittest.TestCase):
         self.assertEqual(sys.stdout.getvalue(), recta_disp)
 
     def test_str(self):
+        """ test stdout the Rectangle instance """
         rec_t0 = Rectangle(4, 6, 2, 2, 1)
         rec_t1 = Rectangle(1, 7, 0, 0, 1)
         rec_t2 = Rectangle(2, 4, 0, 3, 1)
@@ -105,7 +111,7 @@ class RectangleClassTests(unittest.TestCase):
         self.rec0.update(15, 4, 9, 3, 2)
         self.assertEqual(self.rec0.__str__(), "[Rectangle] (15) 3/2 - 4/9")
 
-    def test_update_t9(self):  # Rectangle(4, 6, 2, 2)
+    def test_update_t9(self):
         """ test for assigns a key/value argument to attributes, with **kwargs
         [Rectangle] (id) x/y - width/height
         Rectangle(4, 6, 2, 2)
