@@ -37,7 +37,6 @@ class Base:
         with open(my_fjson, "w") as newfile:
             newfile.write(cls.to_json_string(dict_list))
             # json.dump(cls.to_json_string(dict_list), newfile)
-            newfile.close()
 
     @staticmethod
     def from_json_string(json_string):
