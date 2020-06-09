@@ -118,7 +118,12 @@ class Base:
             return insta_list
 
         with open(finame, mode="r", newline='') as myfile:
-            reader = csv.DictReader(myfile)
+            if cls.__name__ == "Rectangle":
+                attri_list = ["id", "width", "height", "x", "y"]
+            elif cls.__name__ == "Square":
+                attri_list = ["id", "size", "x", "y"]
+
+            reader = csv.DictReader(myfile, fieldnames=attri_list)
 
             for row in reader:  # catch row {key:value}
                 row = {key: int(row[key]) for key in row.keys()}
