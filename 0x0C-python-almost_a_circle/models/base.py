@@ -96,17 +96,17 @@ class Base:
         filecsv = cls.__name__ + ".csv"  # create name
         with open(filecsv, "w") as newfile:
 
-        if list_objs:
-            dict_list = [x.to_dictionary() for x in list_objs]
-            if cls.__name__ == "Rectangle":
-                attri_list = ["id", "width", "height", "x", "y"]
-            elif cls.__name__ == "Square":
-                attri_list = ["id", "size", "x", "y"]
-            writer = csv.DictWriter(newfile, fieldnames=attri_list)
-            writer.writeheader()
-            writer.writerows(dict_list)
-        else:
-            newfile.write('[]')
+            if list_objs:
+                dict_list = [x.to_dictionary() for x in list_objs]
+                if cls.__name__ == "Rectangle":
+                    attri_list = ["id", "width", "height", "x", "y"]
+                elif cls.__name__ == "Square":
+                    attri_list = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(newfile, fieldnames=attri_list)
+                writer.writeheader()
+                writer.writerows(dict_list)
+            else:
+                newfile.write('[]')
 
     @classmethod
     def load_from_file_csv(cls):
