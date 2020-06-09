@@ -93,17 +93,20 @@ class Base:
         * fieldnames = ['first_name', 'last_name']
         * writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         """
-        dict_list = [x.to_dictionary() for x in list_objs]
         filecsv = cls.__name__ + ".csv"  # create name
-        if cls.__name__ == "Rectangle":
-            attri_list = ["id", "width", "height", "x", "y"]
-        elif cls.__name__ == "Square":
-            attri_list = ["id", "size", "x", "y"]
-
         with open(filecsv, "w") as newfile:
+
+        if list_objs:
+            dict_list = [x.to_dictionary() for x in list_objs]
+            if cls.__name__ == "Rectangle":
+                attri_list = ["id", "width", "height", "x", "y"]
+            elif cls.__name__ == "Square":
+                attri_list = ["id", "size", "x", "y"]
             writer = csv.DictWriter(newfile, fieldnames=attri_list)
             writer.writeheader()
             writer.writerows(dict_list)
+        else:
+            csvf.write('[]')
 
     @classmethod
     def load_from_file_csv(cls):
@@ -111,7 +114,7 @@ class Base:
         insta_list = []  # init empty list
         finame = cls.__name__ + ".json"
 
-        if not path.exists(finame):
+        if not os.path.exists(finame):
             return insta_list
 
         with open(finame) as myfile:  # open in mode "r" default
