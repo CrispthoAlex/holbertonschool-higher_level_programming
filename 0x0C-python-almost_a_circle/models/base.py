@@ -105,6 +105,8 @@ class Base:
                 writer = csv.DictWriter(newfile, fieldnames=attri_list)
                 writer.writeheader()
                 writer.writerows(dict_list)
+                # for item_dict in list_objs:
+                # writer.writerow(item_dict.to_dictionary())
             else:
                 newfile.write('[]')
 
@@ -114,7 +116,7 @@ class Base:
         insta_list = []  # init empty list
         finame = cls.__name__ + ".json"
 
-        if not os.path.exists(finame):
+        if not path.exists(finame):
             return insta_list
 
         with open(finame) as myfile:  # open in mode "r" default
