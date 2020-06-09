@@ -7,8 +7,29 @@ Unittest for square module
 import unittest
 from models.square import Square
 import sys
+import pep8
 from io import StringIO
 
+
+class TestSquarePep8(unittest.TestCase):
+    """
+    Class containing function to test Stryle of the Square class
+    """
+    def test_pep8(self):
+        """ Testing square and test_square for pep8. """
+        style = pep8.StyleGuide(quiet=True)
+        file1 = "models/square.py"
+        file2 = "tests/test_models/test_square.py"
+        result = style.check_files([file1, file2])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warning).")
+
+
+class TestSquareDocs(unittest.TestCase):
+    """ Check for documentation. """
+    def test_module_doc(self):
+        """ Check for module documentation. """
+        self.assertTrue(len(square.__doc__) > 0)
 
 class SquareClassTests(unittest.TestCase):
     """ tests case  for class Square """
