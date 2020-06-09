@@ -7,6 +7,7 @@ Unittest for rectangle module
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from models import rectangle
 import sys
 import pep8
 from io import StringIO
@@ -40,17 +41,18 @@ class TestRecDocs(unittest.TestCase):
         for func in dir(Rectangle):
             self.assertTrue(len(func.__doc__) > 0)
 
+
 class RectangleClassTests(unittest.TestCase):
     """ tests case  """
 
     def setUp(self):
         """ set method  """
+        Base._Base__nb_objects = 0
         self.rec0 = Rectangle(4, 6, 2, 2)
-        sys.stdout = StringIO()
-
         self.rectangle_1 = Rectangle(1, 7)
         self.rectangle_2 = Rectangle(2, 4, 0, 3)
         self.rectangle_3 = Rectangle(2, 5)
+        sys.stdout = StringIO()
 
     def tearDown(self):
         """ After running setup clear everything """

@@ -6,8 +6,10 @@ Unittest for square module
 
 import unittest
 from models.square import Square
+from models import square
 import sys
 import pep8
+from models.base import Base
 from io import StringIO
 
 
@@ -31,6 +33,7 @@ class TestSquareDocs(unittest.TestCase):
         """ Check for module documentation. """
         self.assertTrue(len(square.__doc__) > 0)
 
+
 class SquareClassTests(unittest.TestCase):
     """ tests case  for class Square """
 
@@ -40,11 +43,10 @@ class SquareClassTests(unittest.TestCase):
         Square("size", "x", "y", "id")
         """
         self.squa0 = Square(4, 6, 2)
-        sys.stdout = StringIO()
-
         self.squa1 = Square(7)
         self.squa2 = Square(2, 4)
         self.squa3 = Square(5, 9, 8, 25)
+        sys.stdout = StringIO()
 
     def tearDown(self):
         """ After running setup clear everything """

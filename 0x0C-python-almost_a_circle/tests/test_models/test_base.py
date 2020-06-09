@@ -8,6 +8,7 @@ import unittest
 import pep8
 import json
 import sys
+from models import base
 from models.base import Base
 
 
