@@ -23,9 +23,9 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
 
-    st_name = argv[4] # State name to query
+    st_name = argv[4]  # State name to query
     # Save the query with filter by name. Too filter injection
-    sq = session.query(State).filter(State.name=='{}'.format(st_name))
+    sq = session.query(State).filter(State.name == '{}'.format(st_name))
     if sq.all():
         for data in sq.all():
             print("{}".format(data.id))  # Print query
