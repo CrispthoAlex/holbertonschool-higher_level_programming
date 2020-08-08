@@ -26,6 +26,8 @@ if __name__ == "__main__":
     # Save the query with filter ilike to garantee search specific
     sq = session.query(State).filter(State.name.ilike('%a%'))
     for data in sq.all():
-        data.delete()  # Delete each data
+        session.delete(data)  # Delete each data/row
+
+    session.commit()
 
     session.close()
