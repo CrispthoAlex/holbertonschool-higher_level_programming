@@ -20,7 +20,8 @@ if __name__ == "__main__":
     # environments through the same connection to the database
     curdb = database.cursor()  # cursor to database
     # Executing MySQL Queries with LIKE BINARY
-    curdb.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    curdb.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' \
+    ORDER BY id ASC")
     # Obtaining Query Results
     rows = curdb.fetchall()
     for data in rows:
