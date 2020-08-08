@@ -26,5 +26,5 @@ class State(Base):
     id = Column(Integer, autoincrement=True, primary_key=True)
     name = Column(String(128), nullable=False)
 
-    def __repr__(self):
-        return "<State(id='%s' name='%s')>" % (self.id, self.name)
+    # def __repr__(self):
+    #    return "<State(id='%s' name='%s')>" % (self.id, self.name)
