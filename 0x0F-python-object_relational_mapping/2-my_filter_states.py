@@ -20,8 +20,9 @@ if __name__ == "__main__":
     # Getting a Cursor in MySQL: ability to have multiple seperate working
     # environments through the same connection to the database
     curtodb = database.cursor()  # cursor to database
-    # String for Query
-    sq = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state)
+    # String for Query with LIKE BINARY to avoid sensitive
+    sq = "SELECT * FROM states WHERE name LIKE BINARY '{}' \
+    ORDER BY id ASC".format(state)
     # Executing MySQL Queries
     curtodb.execute(sq)
     # Obtaining Query Results
