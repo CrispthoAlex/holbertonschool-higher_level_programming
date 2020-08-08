@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Build a ORM: method of associating user-defined Python classes with database
 tables, and instances of those classes (objects) with rows in their
