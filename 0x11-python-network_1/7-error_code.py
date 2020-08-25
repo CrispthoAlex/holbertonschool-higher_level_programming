@@ -10,7 +10,6 @@ from sys import argv
 if __name__ == "__main__":
     url = argv[1]
     # values = {'email': argv[2]}  # dictionary to request
-    # data = urllib.parse.urlencode(values).encode('ascii')  data shoulb be bytes
     req = requests.get(url)
 
     if req.status_code >= 400:
