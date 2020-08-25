@@ -11,7 +11,10 @@ if __name__ == "__main__":
 
     repo = argv[1]
     user = argv[2]
-    url = 'https://api.github.com/repos/{}/{}/git/commits/'
+    # example
+    # https://api.github.com/repos/octocat/Hello-World/git/commits/
+    url = 'https://api.github.com/repos/{}/{}/git/commits/'.format(
+        user, repo)
 
     try:
         req = requests.get(url)
