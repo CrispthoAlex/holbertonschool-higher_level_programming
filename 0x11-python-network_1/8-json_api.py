@@ -16,17 +16,16 @@ if __name__ == "__main__":
     else:
         value = {'q': argv[1]}
 
-    req = requests.post(url, data=value)
-
     try:
+        req = requests.post(url, data=value)
         req_json = req.json()
 
-        if req_json is {} or (id_req is None or name_req is None):
-            print("No result")
-        else:
+        if req_json:
             id_req = req_json.get('id')
             name_req = req_json.get('name')
             print("[{}] {}".format(id_req, name_req))
+        else:
+            print("No result")
 
     except Exception:
         print("Not a valid JSON")
