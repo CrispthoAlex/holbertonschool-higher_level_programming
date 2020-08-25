@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-* Script that list 10 commits (from the most recent to oldest) of the repository
-rails by the user rails
+* Script that list 10 commits (from most recent to oldest) of the repository
+  rails by the user rails
 * Using the Github API, here is the documentation:
-   https://developer.github.com/v3/repos/commits/
+     https://developer.github.com/v3/repos/commits/
 * Print all commits by: `<sha>: <author name>` (one by line)
 """
 import requests
@@ -24,10 +24,10 @@ if __name__ == "__main__":
         if req_json:  # and req_json.get('message') is not 'Not Found':
             count = 0
             for commit in req_json:
-                print(commit)
+                # print(commit)
                 if count == 10:  # check number of results
                     break
-                    count += 1
+                count += 1
                 sha_repo = commit.get('sha')
                 user_name = commit.get('commit').get('author').get('name')
                 print("{}: {}".format(sha_repo, user_name))
