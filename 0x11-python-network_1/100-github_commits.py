@@ -35,6 +35,6 @@ if __name__ == "__main__":
             print("No result")
             exit()
 
-    except ValueError:
+    except Exception:
         print("Not a valid JSON")
         exit()
