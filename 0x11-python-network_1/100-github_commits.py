@@ -13,24 +13,22 @@ if __name__ == "__main__":
     user = argv[2]
     # example
     # GET /repos/:owner/:repo/commits
-    url = 'https://api.github.com/repos/{}/{}/commits/'.format(
-        user, repo)
+    url = 'https://api.github.com/repos/{}/{}/commits/'.format(user, repo)
     req = requests.get(url)
 
     try:
         req_json = req.json()
         # print(req_json)
-        if req_json and req_json.get('message') is not 'Not Found':
-            count = 0
-            for commit in req_json:
-                if count == 10:  # check number of results
-                    break
-                    count += 1
-                sha_repo = commit.get('sha')
-                user_name = commit.get('author').get('name')
-                print("{}: {}".format(sha_repo, user_name))
-        else:
+        if not req_json or req_json.get('message') == 'Not Found':
             print("No result")
-
     except Exception:
         print("Not a valid JSON")
+
+    count = 0
+    for commit in req_json:
+        if count == 10:  # check number of results
+            break
+            count += 1
+        sha_repo = commit.get('sha')
+        user_name = commit.get('author').get('name')
+        print("{}: {}".format(sha_repo, user_name))
