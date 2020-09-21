@@ -22,7 +22,7 @@ module.exports = class Rectangle {
 
   rotate () {
     // const temp = this.width;
-    // 
+    // Swap variables: https://javascript.info/destructuring-assignment
     [this.width, this.height] = [this.height, this.width];
   }
 
