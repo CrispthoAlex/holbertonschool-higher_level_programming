@@ -10,18 +10,22 @@
 */
 const dict = require('./101-data.js').dict;
 // { '89': 1, '90': 2, '91': 1, '92': 3, '93': 1, '94': 2 }
-console.log(dict);
 
 const listValues = [...new Set(Object.values(dict))]; // Obtain unique elements
 // [ 1, 2, 3 ]
-console.log(listValues);
-const newDict = new Map();
+const newDict = {};
 
 for (const current in listValues) {
   const userArr = [];
   for (const key in dict) {
     if (dict[key] === listValues[current]) userArr.push(key);
-  }
-  newDict.set(listValues[current], userArr);
+  }// e.g.: [ '89', '91', '93' ]
+  newDict[listValues[current]] = userArr;
 }
 console.log(newDict);
+/* {
+   '1': [ '89', '91', '93' ],
+   '2': [ '90', '94' ],
+   '3': [ '92' ]
+   }
+*/
