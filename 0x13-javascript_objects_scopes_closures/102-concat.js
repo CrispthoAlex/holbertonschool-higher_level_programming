@@ -1,16 +1,18 @@
 #!/usr/bin/node
 // Write a script that concats 2 files
+const fileA = process.argv[2]
+const fileB = process.argv[3]
 const fileC = process.argv[4];
 const fs = require('fs');
 
-// Synchronous version of fs.readFile. Returns the contents of the filename
-const txtA = fs.readFileSync(`./${process.argv[2]}`, 'utf8');
-const txtB = fs.readFileSync(`./${process.argv[3]}`, 'utf8');
-const txtC = txtA + txtB;
+if (fileA && fileB && fileC) {
+  // Synchronous version of fs.readFile. Returns the contents of the filename
+  const txtA = fs.readFileSync(fileA);
+  const txtB = fs.readFileSync(fileB);
+  const txtC = txtA + txtB;
 
-/* Asynchronously writes data to a file, replacing the file if it
-   already exists. data can be a string or a buffer
-*/
-fs.writeFile(fileC, txtC, (err) => {
-  if (err) throw err; console.log(err);
-});
+  /* Asynchronously writes data to a file, replacing the file if it
+     already exists. data can be a string or a buffer
+  */
+  fs.writeFileSync(fileC, txtC);
+}
