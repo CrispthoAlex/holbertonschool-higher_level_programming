@@ -7,7 +7,7 @@ if (file) {
   // Asynchronous version of fs.readFile. Returns the contents of the filename
   fs.readFile(file, 'utf8', (err, data) => {
     if (err) {
-      console.log(err)
+      console.log(err);
     } else console.log(data);
   });
 }
